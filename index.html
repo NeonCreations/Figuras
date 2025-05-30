@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculadora</title>
+</head>
+<body>
+
+<script>
+/*línea que permite escribir*/
+document.write('Hola! soy Kermit Xavier Hernandez Vazquez, estudiante de la materia de desarrollo de videojuegos en la licenciatura de Diseño grafico y Animación Digital.');//escribo texto hola
+document.write('<br>');//escribo una etiqueta html de salto de línea en el texto (retorno de carro).
+document.write('<br>')
+document.write('Este es mi primer programa con javascript en este curso, parece ser un lenguaje divertido e interesante de usar. Busque informarme un poco mas para que este trabajo tuviese elementos con mayor interactividad y orden a la hora de ejecutarse por ende modifique un poco los aspectos del codigo con el fin de darle una mejor presentación al trabajo. El objetivo de estas modificiaciones son unicamente con el fin de aprender y experientar con el lenguaje de programacion script en conjunto con HTML esperando aprender mas sobre el mismo en el futuro.');
+document.write('<br>');
+document.write('<br>');
+document.write('Los botones debajo realizan lel calculo del area y el perimetro de las figuras selecionadas solicitando asi mismo los datos necesarios para el calculo.');
+document.write('<br>');
+document.write('<br>');
+document.write('Las figuras a elegir son las siguientes:');
+document.write('<br>');
+document.write('<br>');
+</script>
+
+<button onclick="operaciones_rombo()">Rombo</button>
+<button onclick="operaciones_rectangulo()">Rectangulo</button>
+<button onclick="operaciones_penta()">Pentagono</button>
+
+<div id="resultados_rombo"> </div>
+<div id="resultados_rectangulo"> </div>
+<div id="resultados_pentagono"> </div>
+
+
+<script>
+	function operaciones_rombo() {
+	
+/*creo variables*/
+var Drombo;
+var drombo;
+var ladorombo;
+
+/*pido datos en un dialogo del explorador*/
+Drombo=prompt('Introduce la diagonal mayor del rombo:','');//pido base triangulo
+drombo=prompt('Introduce la diagonal menor del rombo:','');//pido altura triangulo
+ladorombo=prompt('Introduce el largo de un lado del rombo:','');
+
+/*convierto valores a valores numéricos para poder hacer operaciones*/
+Drombo=parseInt(Drombo);
+drombo=parseInt(drombo);
+ladorombo=parseInt(ladorombo);
+
+/*hago operaciones*/
+//hago calculo del perimetro del cuadrado
+var arearombo=(Drombo * drombo) / 2;
+//hago calculo del área del triangulo
+var perimetrorombo=4 * ladorombo;
+
+
+  document.getElementById('resultados_rombo').innerHTML =
+      'El área del rombo es: ' + arearombo + '<br>' +
+      'El perímetro del rombo es: ' + perimetrorombo + '<br><br>';
+}
+</script>
+
+<script>
+	function operaciones_rectangulo() {
+	
+var baserectangulo;
+var alturarectangulo;
+
+baserectangulo=prompt('Introduce la base del rectangulo:','');
+alturarectangulo=prompt('Introduce la altura del rectangulo:','');
+
+baserectangulo=parseInt(baserectangulo);
+alturarectangulo=parseInt(alturarectangulo);
+
+var arearectangulo= baserectangulo * alturarectangulo;
+var perimetrorectangulo= 2 * (baserectangulo + alturarectangulo);
+
+document.getElementById('resultados_rectangulo').innerHTML =
+      'El área del rectangulo es: ' + arearectangulo + '<br>' +
+      'El perímetro del rectangulo es: ' + perimetrorectangulo + '<br><br>';
+}
+</script>
+
+<script>
+	function operaciones_penta() {
+var ladopentagono;
+var apodema;
+
+ladopentagono=prompt('Introduce el largo de un lado del pentagono:','');
+apodema=prompt('Introduce el valor de la apodema del pentagono:','');
+
+ladopentagono=parseInt(ladopentagono);
+apodema=parseInt(apodema);
+
+var perimetropenta=( 5 * ladopentagono);
+var areapenta= (perimetropenta * apodema) /2;
+
+
+/*escribo resultados*/
+
+document.getElementById('resultados_pentagono').innerHTML =
+      'El área del pentagono es: ' + areapenta + '<br>' +
+      'El perímetro del pentagono es: ' + perimetropenta + '<br><br>';
+}
+
+</script>
+
+</body>
+</html>
